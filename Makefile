@@ -22,12 +22,12 @@ OBJS := $(patsubst %.c,%.o,$(SRCS))
 
 all: $(OUTPUT)
 
-# Run IO Test
-test:
-	python3 io-test.py
-
 run: $(OUTPUT)
 	./$(OUTPUT)
+
+# Run IO Test
+test: $(OUTPUT)
+	python3 io-test.py
 
 # Compile the object files 
 $(OUTPUT): $(COMMON_OBJS) $(LOCAL_OBJS) $(OBJS)
